@@ -1,5 +1,5 @@
 import cartIcon from "@/../public/icons/cart.svg";
-import type { NavigationItem } from "@/types";
+import { NavigationItem } from "@/types/navigation";
 
 export const navigationItems: NavigationItem[] = [
   {

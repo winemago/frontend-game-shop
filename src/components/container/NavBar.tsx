@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import GamerShopLogo from "@/../public/logos/GamerShop.svg";
-import { navigationItems } from "@/constants";
+import { navigationItems } from "@/constants/navigation";
 
 export default function NavBar() {
   return (
