@@ -39,7 +39,7 @@ export default async function GameContainer({ searchParams }: Props) {
 
   return (
     <>
-      <div className="mb-32">
+      <div className="mb-32 px-global py-8 border-b border-stroke">
         <GenreSelect options={genreOptions} />
       </div>
       <GameList games={games} />

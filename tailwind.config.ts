@@ -56,6 +56,7 @@ const config: Config = {
         "8": "var(--spacing-8)",
         "9": "var(--spacing-9)",
         "10": "var(--spacing-10)",
+        global: "var(--global-padding)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

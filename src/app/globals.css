@@ -20,6 +20,7 @@
   /* SIZES */
   --nav-height: 64px;
   --footer-height: 172px;
+  --global-padding: 120px;
 
   /* FONTS */
   --font-archivo: "Archivo", sans-serif;

@@ -7,7 +7,7 @@ export default function NavBar() {
   return (
     <header className="bg-surface-secondary h-nav-height" role="banner">
       <nav
-        className="max-w-7xl mx-auto flex items-center justify-between h-full"
+        className="px-global flex items-center justify-between h-full"
         role="navigation"
         aria-label="Main navigation"
       >
