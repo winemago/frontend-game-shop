@@ -2,7 +2,6 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import Select from "@/components/ui/select/Select";
-import Spinner from "@/components/ui/spinner/Spinner";
 import { Option } from "@/types/selectOptions";
 
 type SelectProps = {
