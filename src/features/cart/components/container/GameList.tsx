@@ -1,12 +1,13 @@
 import { apiService } from "@/services/apiService";
 import GamePreviewCard from "../ui/cards/GamePreviewCard";
 import { GamesResponse } from "../../types/gameResponse";
-import { endpoints } from "@/constants/endpoints";
+import { ENDPOINTS } from "@/config/endpoints";
+import { REVALIDATION_TIMES } from "@/config/revalidation";
 
-export const revalidate = 60;
+export const revalidate = REVALIDATION_TIMES.PRODUCTS;
 
 export default async function GameList() {
-  const response = await apiService<GamesResponse>(endpoints.games);
+  const response = await apiService<GamesResponse>(ENDPOINTS.GAMES);
   const games = response.games;
 
   return (

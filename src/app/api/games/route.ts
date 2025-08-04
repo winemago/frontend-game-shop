@@ -1,8 +1,9 @@
 import { allGames, availableFilters, delay } from "@/utils/endpoint";
+import { REVALIDATION_TIMES } from "@/config/revalidation";
 
 const ITEMS_PER_PAGE = 12;
 
-export const revalidate = 60;
+export const revalidate = REVALIDATION_TIMES.PRODUCTS;
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

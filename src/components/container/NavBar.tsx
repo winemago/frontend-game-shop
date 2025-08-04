@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import GamerShopLogo from "@/../public/logos/GamerShop.svg";
-import { navigationItems } from "@/constants/navigation";
+import { NAVIGATION_ITMES } from "@/config/navigation";
 
 export default function NavBar() {
   return (
@@ -24,7 +24,7 @@ export default function NavBar() {
           />
         </Link>
         <ul className="flex items-center justify-center">
-          {navigationItems.map((item, index) => (
+          {NAVIGATION_ITMES.map((item, index) => (
             <li key={index}>
               <Link
                 href={item.href}
