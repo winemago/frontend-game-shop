@@ -9,14 +9,26 @@ type GamePreviewCardProps = {
 
 export default function GamePreviewCard({ game }: GamePreviewCardProps) {
   return (
-    <CommonCard>
-      <Image src={game.image} alt={game.name} width={200} height={150} />
-      <h4>{game.name}</h4>
-      <div>
-        <h3>{game.genre}</h3>
-        <h3>${game.price}</h3>
+    <CommonCard width="380px" height="436px">
+      <div className="flex flex-col items-center justify-center max-h-[436px]">
+        <Image
+          className="rounded-lg flex-shrink-0"
+          src={game.image}
+          alt={game.name}
+          width={300}
+          height={340}
+        />
+        <div className="flex-shrink-0">
+          <h4 className="mb-2 text-sm">{game.name}</h4>
+          <div className="flex justify-between mb-3">
+            <h3 className="text-sm">{game.genre}</h3>
+            <h3 className="text-sm">${game.price}</h3>
+          </div>
+        </div>
+        <Button variant="secondary" className="flex-shrink-0">
+          ADD TO CART
+        </Button>
       </div>
-      <Button variant="secondary">ADD TO CART</Button>
     </CommonCard>
   );
 }
