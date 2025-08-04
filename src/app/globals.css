@@ -6,6 +6,7 @@
     /* COLORS */
   --surface: #FFFFFF;
   --surface-secondary: #EEEEEE;
+  --surface-neutral: #404040;
   --neutral: #404040;
   --fill-primary: #585660;
   --text-primary: #3B3B3B;
@@ -17,5 +18,6 @@
 
   /* SIZES */
   --nav-height: 64px;
+  --footer-height: 172px;
 }
 

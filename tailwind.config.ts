@@ -9,19 +9,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        surface: "#FFFFFF",
-        "surface-secondary": "#EEEEEE",
-        neutral: "#404040",
-        "fill-primary": "#585660",
-        "text-primary": "#3B3B3B",
-        "text-secondary": "#737373",
-        "text-on-fill": "#FFFFFF",
-        stroke: "#EFEDF3",
-        "stroke-secondary": "#8F8F8F",
-        "fill-secondary": "#F5F5F4",
+        surface: "var(--surface)",
+        "surface-secondary": "var(--surface-secondary)",
+        "surface-neutral": "var(--surface-neutral)",
+        neutral: "var(--neutral)",
+        "fill-primary": "var(--fill-primary)",
+        "text-primary": "var(--text-primary)",
+        "text-secondary": "var(--text-secondary)",
+        "text-on-fill": "var(--text-on-fill)",
+        stroke: "var(--stroke)",
+        "stroke-secondary": "var(--stroke-secondary)",
+        "fill-secondary": "var(--fill-secondary)",
       },
       height: {
         "nav-height": "var(--nav-height)",
+        "footer-height": "var(--footer-height)",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
