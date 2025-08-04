@@ -1,8 +1,10 @@
-import { ENDPOINTS } from "@/config/endpoints";
+import { ENDPOINTS, ITEMS_PER_PAGE } from "@/config/endpoints";
 import GameList from "./GameList";
 import { apiService } from "@/services/apiService";
 import { GamesResponse } from "../../types/gameResponse";
 import GenreSelect from "../ui/selects/GenreSelect";
+import Pagination from "@/components/ui/pagination/Pagination";
+import EmptyGames from "../ui/cards/EmptyGames";
 
 type Props = {
   searchParams: {
@@ -20,6 +22,9 @@ export default async function GameContainer({ searchParams }: Props) {
 
   if (searchParams?.page) {
     params.set("page", searchParams.page);
+  } else {
+    // Default to page 1 if no page parameter is provided
+    params.set("page", "1");
   }
 
   const queryString = params.toString();
@@ -30,6 +35,7 @@ export default async function GameContainer({ searchParams }: Props) {
   const response = await apiService<GamesResponse>(endpoint);
   const games = response.games;
   const availableFilters = response.availableFilters;
+  const { totalPages, currentPage } = response;
 
   const genreOptions =
     availableFilters?.map((genre: string) => ({
@@ -42,7 +48,10 @@ export default async function GameContainer({ searchParams }: Props) {
       <div className="mb-32 px-global py-8 border-b border-stroke">
         <GenreSelect options={genreOptions} />
       </div>
-      <GameList games={games} />
+      {games.length > 0 ? <GameList games={games} /> : <EmptyGames />}
+      {games.length > ITEMS_PER_PAGE && (
+        <Pagination totalPages={totalPages} currentPage={currentPage} />
+      )}
     </>
   );
 }

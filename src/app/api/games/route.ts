@@ -1,7 +1,6 @@
 import { allGames, availableFilters, delay } from "@/utils/endpoint";
 import { REVALIDATION_TIMES } from "@/config/revalidation";
-
-const ITEMS_PER_PAGE = 12;
+import { ITEMS_PER_PAGE } from "@/config/endpoints";
 
 export const revalidate = REVALIDATION_TIMES.PRODUCTS;
 
