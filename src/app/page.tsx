@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import GameGridSkeleton from "@/components/ui/skeletons/GameGridSkeleton";
-import GameContainer from "@/features/cart/components/container/GamesContainer";
+import GameContainer from "@/features/catalog/components/container/GamesContainer";
 
 export default async function Home({
   searchParams,
