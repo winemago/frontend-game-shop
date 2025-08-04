@@ -31,7 +31,6 @@ export default async function GameContainer({ searchParams }: Props) {
   const games = response.games;
   const availableFilters = response.availableFilters;
 
-  // Convert available filters to select options
   const genreOptions =
     availableFilters?.map((genre: string) => ({
       value: genre,
@@ -40,7 +39,7 @@ export default async function GameContainer({ searchParams }: Props) {
 
   return (
     <>
-      <div className="mb-6">
+      <div className="mb-32">
         <GenreSelect options={genreOptions} />
       </div>
       <GameList games={games} />

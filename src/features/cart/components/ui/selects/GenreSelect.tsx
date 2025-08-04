@@ -2,6 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import Select from "@/components/ui/select/Select";
+import Spinner from "@/components/ui/spinner/Spinner";
 import { Option } from "@/types/selectOptions";
 
 type SelectProps = {
@@ -19,31 +20,39 @@ export default function GenreSelect({ options }: SelectProps) {
 
     if (value === "all") {
       params.delete("genre");
-
       window.location.href = "/";
       return;
     } else if (value) {
       params.set("genre", value);
     }
 
-    // Reset to page 1 when changing genre
     params.delete("page");
 
     const newUrl = params.toString() ? `?${params.toString()}` : "";
 
-    router.replace(newUrl);
+    router.push(newUrl);
   };
 
   const allOptions = [{ value: "all", label: "All" }, ...options];
 
   return (
-    <Select
-      onChange={handleGenreChange}
-      options={allOptions}
-      value={currentGenre}
-      placeholder="Select a genre"
-      id="genre-select"
-      name="genre"
-    />
+    <div className="flex items-center gap-4 justify-end">
+      <label
+        htmlFor="genre-select"
+        className="block text-lg font-bold text-text-primary"
+      >
+        Genre
+      </label>
+      <div className="flex items-center gap-2">
+        <Select
+          onChange={handleGenreChange}
+          options={allOptions}
+          value={currentGenre}
+          placeholder="Select a genre"
+          id="genre-select"
+          name="genre"
+        />
+      </div>
+    </div>
   );
 }
