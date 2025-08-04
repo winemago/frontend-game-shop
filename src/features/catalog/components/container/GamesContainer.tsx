@@ -49,7 +49,7 @@ export default async function GameContainer({ searchParams }: Props) {
         <GenreSelect options={genreOptions} />
       </div>
       {games.length > 0 ? <GameList games={games} /> : <EmptyGames />}
-      {games.length > ITEMS_PER_PAGE && (
+      {games.length >= ITEMS_PER_PAGE && (
         <Pagination totalPages={totalPages} currentPage={currentPage} />
       )}
     </>
