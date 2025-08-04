@@ -1,0 +1,51 @@
+import Image from "next/image";
+import Link from "next/link";
+import GamerShopLogo from "@/../public/logos/GamerShop.svg";
+import { navigationItems } from "@/constants";
+
+export default function NavBar() {
+  return (
+    <header className="bg-surface-secondary h-nav-height" role="banner">
+      <nav
+        className="max-w-7xl mx-auto flex items-center justify-between h-full"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <Link
+          href="/"
+          className="text-xl font-bold text-foreground hover:text-gaming-accent transition-colors"
+          aria-label="GamerShop - Home"
+        >
+          <Image
+            src={GamerShopLogo}
+            alt={"GamerShopLogo"}
+            width={100}
+            height={100}
+          />
+        </Link>
+        <ul className="flex items-center justify-center">
+          {navigationItems.map((item, index) => (
+            <li key={index}>
+              <Link
+                href={item.href}
+                className="relative h-full hover:bg-muted rounded-lg transition-colors"
+                aria-label={item.label}
+              >
+                {item.icon ? (
+                  <Image
+                    src={item.icon}
+                    alt={item.iconAlt || ""}
+                    width={18}
+                    height={18}
+                  />
+                ) : (
+                  item.text
+                )}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+  );
+}
