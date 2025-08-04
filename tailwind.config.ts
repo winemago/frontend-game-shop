@@ -25,6 +25,22 @@ const config: Config = {
         "nav-height": "var(--nav-height)",
         "footer-height": "var(--footer-height)",
       },
+      fontFamily: {
+        archivo: "var(--font-archivo)",
+      },
+      fontSize: {
+        xs: "var(--font-size-xs)",
+        sm: "var(--font-size-sm)",
+        md: "var(--font-size-md)",
+        lg: "var(--font-size-lg)",
+        xl: "var(--font-size-xl)",
+        "2xl": "var(--font-size-2xl)",
+        "3xl": "var(--font-size-3xl)",
+        "4xl": "var(--font-size-4xl)",
+        "5xl": "var(--font-size-5xl)",
+        "6xl": "var(--font-size-6xl)",
+        "7xl": "var(--font-size-7xl)",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

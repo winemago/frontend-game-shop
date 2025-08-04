@@ -19,8 +19,8 @@ export default function NavBar() {
           <Image
             src={GamerShopLogo}
             alt={"GamerShopLogo"}
-            width={100}
-            height={100}
+            width={150}
+            height={24}
           />
         </Link>
         <ul className="flex items-center justify-center">
@@ -35,8 +35,8 @@ export default function NavBar() {
                   <Image
                     src={item.icon}
                     alt={item.iconAlt || ""}
-                    width={18}
-                    height={18}
+                    width={24}
+                    height={24}
                   />
                 ) : (
                   item.text
