@@ -5,7 +5,6 @@ type SelectProps = {
   options: Option[];
   value?: string;
   onChange: (value: string) => void;
-  placeholder?: string;
   className?: string;
   disabled?: boolean;
   id?: string;
@@ -17,7 +16,6 @@ export default function Select({
   options,
   value,
   onChange,
-  placeholder = "Select an option",
   className = "",
   disabled = false,
   id,

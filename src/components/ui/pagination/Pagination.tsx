@@ -70,7 +70,7 @@ export default function Pagination({
         size="sm"
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage <= 1}
-        className="flex items-center gap-1"
+        className="flex items-center gap-1 px-4 py-3"
       >
         <svg
           width="16"
@@ -100,7 +100,7 @@ export default function Pagination({
                 variant={currentPage === page ? "default" : "outline"}
                 size="sm"
                 onClick={() => handlePageChange(page as number)}
-                className="min-w-[40px]"
+                className="min-w-[40px] px-4 py-3"
               >
                 {page}
               </Button>
@@ -114,7 +114,7 @@ export default function Pagination({
         size="sm"
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage >= totalPages}
-        className="flex items-center gap-1"
+        className="flex items-center gap-1 px-4 py-3"
       >
         Next
         <svg

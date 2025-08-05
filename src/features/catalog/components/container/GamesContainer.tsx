@@ -1,10 +1,10 @@
-import { ENDPOINTS, ITEMS_PER_PAGE } from "@/config/endpoints";
+import { ENDPOINTS } from "@/config/endpoints";
 import GameList from "./GameList";
 import { apiService } from "@/services/apiService";
 import { GamesResponse } from "../../../../types/gameResponse";
 import GenreSelect from "../ui/selects/GenreSelect";
 import Pagination from "@/components/ui/pagination/Pagination";
-import EmptyGames from "../ui/cards/EmptyGames";
+import EmptyCaseCard from "@/components/ui/cards/EmptyCaseCard";
 
 type Props = {
   searchParams: {
@@ -54,7 +54,7 @@ export default async function GameContainer({ searchParams }: Props) {
           <Pagination totalPages={totalPages} currentPage={currentPage} />
         </>
       ) : (
-        <EmptyGames />
+        <EmptyCaseCard message="No games found. Try adjusting your filters or search criteria." />
       )}
     </>
   );

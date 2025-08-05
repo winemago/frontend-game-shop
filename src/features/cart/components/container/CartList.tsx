@@ -11,14 +11,18 @@ export default function CartList() {
   }
 
   return (
-    <div className="flex flex-col gap-6 ">
-      {games.map((game) => (
-        <GameFullCard
-          key={game.id}
-          game={game}
-          onRemove={() => removeGame(game.id)}
-        />
-      ))}
+    <div className="flex flex-col">
+      {games.map((game, index) => {
+        const isLast = index === games.length - 1;
+        return (
+          <div
+            key={game.id}
+            className={!isLast ? "border-b border-gray-300 pb-4 mb-4" : ""}
+          >
+            <GameFullCard game={game} onRemove={() => removeGame(game.id)} />
+          </div>
+        );
+      })}
     </div>
   );
 }

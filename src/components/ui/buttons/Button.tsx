@@ -18,22 +18,17 @@ export default function Button({
   disabled = false,
 }: ButtonProps) {
   const baseClasses =
-    "rounded-common transition-all duration-200 hover:opacity-90";
+    "rounded-common transition-all duration-200 hover:opacity-90 flex items-center";
 
   const sizeClasses = {
     default: "px-6 py-4",
-    sm: "px-4 py-3 text-sm",
-  };
-
-  const widthClasses = {
-    default: "w-full",
-    sm: "w-auto",
+    sm: " text-sm",
   };
 
   const variantClasses = {
     primary: "bg-fill-primary text-text-on-fill ",
     secondary: "bg-fill-tertiary text-primary border border-stroke-secondary",
-    transparent: "bg-transparent text-gray-700",
+    transparent: "bg-transparent text-text-neutral gap-1 p-0",
     default: "bg-fill-primary text-text-on-fill",
     outline:
       "bg-transparent text-primary border border-stroke-secondary hover:bg-fill-tertiary",
@@ -41,7 +36,7 @@ export default function Button({
 
   return (
     <button
-      className={`${baseClasses} ${sizeClasses[size]} ${widthClasses[size]} ${
+      className={`${baseClasses} ${sizeClasses[size]} ${
         variantClasses[variant]
       } ${className} ${disabled ? "opacity-50 cursor-not-allowed" : ""}`}
       onClick={onClick}

@@ -47,7 +47,6 @@ export default function GenreSelect({ options }: SelectProps) {
           onChange={handleGenreChange}
           options={allOptions}
           value={currentGenre}
-          placeholder="Select a genre"
           id="genre-select"
           name="genre"
         />

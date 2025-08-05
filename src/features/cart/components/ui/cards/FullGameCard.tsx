@@ -10,12 +10,20 @@ type GameFullCardProps = {
 
 export default function GameFullCard({ game, onRemove }: GameFullCardProps) {
   return (
-    <div className="relative flex gap-4 border-b pb-4 items-start">
-      <div className="w-[120px] h-[80px] relative shrink-0">
-        <Image src={game.image} alt={game.name} width={256} height={156} />
+    <div className="relative flex sm:flex-col md:flex-row gap-4 pb-4 items-start md:items-center">
+      <div className=" md:w-[120px] h-[160px] md:h-[80px] relative shrink-0">
+        <Image
+          src={game.image}
+          alt={game.name}
+          width={120}
+          height={180}
+          className="object-cover rounded-md w-full md:w-[120px] h-auto"
+        />
       </div>
-      <div className="flex flex-col flex-grow min-w-0">
-        <h4 className=" text-text-secondary uppercase mb-1">{game.genre}</h4>
+      <div className="flex flex-col flex-grow min-w-0 w-full">
+        <h4 className="text-text-secondary text-xs uppercase mb-1">
+          {game.genre}
+        </h4>
         <h3 className="font-bold text-lg text-text-primary leading-snug break-words">
           {game.name}
         </h3>
@@ -25,15 +33,16 @@ export default function GameFullCard({ game, onRemove }: GameFullCardProps) {
           </p>
         )}
       </div>
-      <div className="ml-2 mt-auto whitespace-nowrap font-semibold text-sm shrink-0">
+      <div className="text-sm h-full flex flex-grow justify-end font-semibold text-right md:ml-2 md:mt-auto whitespace-nowrap">
         ${game.price.toFixed(2)}
       </div>
 
       {onRemove && (
         <Button
           variant="transparent"
+          size="sm"
           onClick={onRemove}
-          className="absolute top-2 right-2 p-1"
+          className="p-1"
         >
           <Image src={cancelIcon} alt="Remove" width={16} height={16} />
         </Button>
