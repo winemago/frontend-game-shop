@@ -28,7 +28,7 @@ export default function Button({
   const variantClasses = {
     primary: "bg-fill-primary text-text-on-fill ",
     secondary: "bg-fill-tertiary text-primary border border-stroke-secondary",
-    transparent: "bg-transparent text-text-neutral gap-1 p-0",
+    transparent: "bg-transparent text-text-neutral gap-1",
     default: "bg-fill-primary text-text-on-fill",
     outline:
       "bg-transparent text-primary border border-stroke-secondary hover:bg-fill-tertiary",

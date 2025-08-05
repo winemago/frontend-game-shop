@@ -42,7 +42,7 @@ export default function GameFullCard({ game, onRemove }: GameFullCardProps) {
           variant="transparent"
           size="sm"
           onClick={onRemove}
-          className="p-1"
+          className="p-2"
         >
           <Image src={cancelIcon} alt="Remove" width={16} height={16} />
         </Button>

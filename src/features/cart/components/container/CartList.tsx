@@ -1,10 +1,10 @@
 "use client";
 
-import { useLocalStorageGames } from "@/hooks/useLocalStorageGames"; // adjust path if needed
 import GameFullCard from "../ui/cards/FullGameCard";
+import { useCartStore } from "@/store/CartStore";
 
 export default function CartList() {
-  const { games, removeGame } = useLocalStorageGames();
+  const { games, removeGame } = useCartStore();
 
   if (games.length === 0) {
     return <p className="text-center py-10">Your cart is empty.</p>;

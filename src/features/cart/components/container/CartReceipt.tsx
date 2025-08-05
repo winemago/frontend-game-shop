@@ -1,11 +1,11 @@
 "use client";
 
-import { useLocalStorageGames } from "@/hooks/useLocalStorageGames";
 import Button from "@/components/ui/buttons/Button";
 import ListItem from "../ui/list/ListItem";
+import { useCartStore } from "@/store/CartStore";
 
 export default function CartReceipt() {
-  const { games } = useLocalStorageGames();
+  const { games } = useCartStore();
 
   const total = games.reduce((sum, game) => sum + game.price, 0);
 

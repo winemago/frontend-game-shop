@@ -40,7 +40,7 @@ export default async function GameContainer({ searchParams }: Props) {
   const genreOptions =
     availableFilters?.map((genre: string) => ({
       value: genre,
-      label: genre.charAt(0).toUpperCase() + genre.slice(1), // Capitalize first letter
+      label: genre.charAt(0).toUpperCase() + genre.slice(1),
     })) || [];
 
   return (

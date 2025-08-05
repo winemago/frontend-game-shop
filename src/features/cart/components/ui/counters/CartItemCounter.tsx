@@ -1,9 +1,9 @@
 "use client";
 
-import { useLocalStorageGames } from "@/hooks/useLocalStorageGames";
+import { useCartStore } from "@/store/CartStore";
 
 export default function CartItemCounter() {
-  const { games } = useLocalStorageGames();
+  const { games } = useCartStore();
 
   return (
     <span className="text-xl text-text-primary font-medium">
