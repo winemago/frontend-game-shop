@@ -17,7 +17,6 @@ export const useCartStore = create<CartState>()(
 
       addGame: (game: Game) => {
         const { games } = get();
-        // Check if game already exists to prevent duplicates
         if (games.some((existingGame) => existingGame.id === game.id)) {
           return;
         }
@@ -39,9 +38,7 @@ export const useCartStore = create<CartState>()(
       },
     }),
     {
-      name: "cart-storage", // localStorage key
-      // You can also specify which parts of the state to persist
-      // partialize: (state) => ({ games: state.games }),
+      name: "cart-storage",
     }
   )
 );
