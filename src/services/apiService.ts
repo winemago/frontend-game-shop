@@ -27,8 +27,6 @@ export async function apiService<T>(
     ...headers,
   };
 
-  console.log(url);
-
   const res = await fetch(url, {
     method,
     headers: defaultHeaders,

@@ -24,7 +24,6 @@ export default async function Home() {
         <CartItemCounter />
       </div>
       <div className="flex flex-col lg:flex-row gap-10 items-start">
-        {/* Cart List */}
         <div className="flex-1 w-full">
           <CartList />
         </div>
