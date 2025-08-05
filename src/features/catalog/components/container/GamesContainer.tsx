@@ -33,9 +33,7 @@ export default async function GameContainer({ searchParams }: Props) {
     : ENDPOINTS.GAMES;
 
   const response = await apiService<GamesResponse>(endpoint);
-  const games = response.games;
-  const availableFilters = response.availableFilters;
-  const { totalPages, currentPage } = response;
+  const { games, totalPages, currentPage, availableFilters } = response;
 
   const genreOptions =
     availableFilters?.map((genre: string) => ({
