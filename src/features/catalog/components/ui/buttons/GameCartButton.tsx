@@ -8,7 +8,7 @@ type GameCartButtonProps = {
   game: Game;
 };
 
-export default function GameCartButton({ game }: GameCartButtonProps) {
+export default async function GameCartButton({ game }: GameCartButtonProps) {
   const { addGame, removeGame, isInCart } = useCartStore();
 
   const gameIsInCart = isInCart(game.id);
@@ -23,8 +23,9 @@ export default function GameCartButton({ game }: GameCartButtonProps) {
 
   return (
     <Button
-      variant={gameIsInCart ? "secondary" : "primary"}
+      variant={gameIsInCart ? "primary" : "secondary"}
       onClick={handleClick}
+      className="w-full text-center font-semibold"
     >
       {gameIsInCart ? "REMOVE" : "ADD TO CART"}
     </Button>

@@ -1,7 +1,13 @@
 import CommonCard from "@/components/ui/cards/CommonCard";
 import { Game } from "@/types/game";
 import Image from "next/image";
-import GameCartButton from "../buttons/GameCartButton";
+import dynamic from "next/dynamic";
+import SkeletonButton from "../skeleton/SkeletonButton";
+
+const GameCartButton = dynamic(() => import("../buttons/GameCartButton"), {
+  ssr: false,
+  loading: () => <SkeletonButton />,
+});
 
 type GamePreviewCardProps = {
   game: Game;
@@ -10,22 +16,33 @@ type GamePreviewCardProps = {
 export default function GamePreviewCard({ game }: GamePreviewCardProps) {
   return (
     <CommonCard width="380px" height="436px">
-      <div className="flex flex-col items-center justify-center max-h-[436px]">
-        <Image
-          className="rounded-lg flex-shrink-0"
-          src={game.image}
-          alt={game.name}
-          width={300}
-          height={340}
-        />
-        <div className="flex-shrink-0">
-          <h4 className="mb-2 text-sm">{game.name}</h4>
-          <div className="flex justify-between mb-3">
-            <h3 className="text-sm">{game.genre}</h3>
-            <h3 className="text-sm">${game.price}</h3>
+      <div className="flex flex-col h-full">
+        <div className="w-full h-7 mb-4 overflow-hidden rounded-lg">
+          <Image
+            className="object-cover"
+            src={game.image}
+            alt={game.name}
+            width={300}
+            height={200}
+          />
+        </div>
+        <div className="flex-shrink-0 space-y-3">
+          <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">
+            GENRE
+          </div>
+          <div className="flex items-center justify-between">
+            <h3 className="text-lg font-semibold text-gray-900 truncate flex-1 mr-4">
+              {game.name}
+            </h3>
+            <span className="text-lg font-bold text-gray-900 flex-shrink-0">
+              ${game.price}
+            </span>
+          </div>
+
+          <div className="pt-2 w-full">
+            <GameCartButton game={game} />
           </div>
         </div>
-        <GameCartButton game={game} />
       </div>
     </CommonCard>
   );

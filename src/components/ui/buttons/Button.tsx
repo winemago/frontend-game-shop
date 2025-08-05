@@ -18,7 +18,7 @@ export default function Button({
   disabled = false,
 }: ButtonProps) {
   const baseClasses =
-    "rounded-common transition-all duration-200 hover:opacity-90 flex items-center";
+    "rounded-common transition-all duration-200 hover:opacity-90 flex items-center justify-center";
 
   const sizeClasses = {
     default: "px-6 py-4",
@@ -26,7 +26,7 @@ export default function Button({
   };
 
   const variantClasses = {
-    primary: "bg-fill-primary text-text-on-fill ",
+    primary: "bg-fill-primary text-text-on-fill",
     secondary: "bg-fill-tertiary text-primary border border-stroke-secondary",
     transparent: "bg-transparent text-text-neutral gap-1",
     default: "bg-fill-primary text-text-on-fill",
