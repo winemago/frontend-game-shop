@@ -2,24 +2,21 @@ import CommonCard from "@/components/ui/cards/CommonCard";
 
 export default function GameCardSkeleton() {
   return (
-    <CommonCard width="380px" height="436px">
-      <div className="flex flex-col items-center justify-center max-h-[436px]">
-        {/* Image skeleton */}
-        <div className="w-[300px] h-[270px] bg-gray-200 rounded-lg animate-pulse mb-4" />
-
-        {/* Title skeleton */}
-        <div className="w-full mb-2">
-          <div className="h-4 bg-gray-200 rounded animate-pulse mb-2" />
+    <CommonCard>
+      <div className="flex flex-col h-full min-h-[400px] sm:min-h-[436px] animate-pulse">
+        <div className="w-full mb-3 sm:mb-4 overflow-hidden rounded-lg bg-gray-200 h-[280px] flex-shrink-0" />
+        <div className="flex flex-col flex-1 justify-between">
+          <div className="space-y-2 sm:space-y-3">
+            <div className="h-3 w-1/4 bg-gray-200 rounded" />
+            <div className="flex items-start sm:items-center justify-between gap-2">
+              <div className="h-5 sm:h-6 w-3/4 bg-gray-200 rounded" />
+              <div className="h-5 sm:h-6 w-1/6 bg-gray-200 rounded mt-0.5 sm:mt-0" />
+            </div>
+          </div>
+          <div className="w-full mt-4 sm:mt-6">
+            <div className="h-10 bg-gray-200 rounded" />
+          </div>
         </div>
-
-        {/* Genre and price skeleton */}
-        <div className="flex justify-between w-full mb-3">
-          <div className="h-4 bg-gray-200 rounded animate-pulse w-1/3" />
-          <div className="h-4 bg-gray-200 rounded animate-pulse w-1/4" />
-        </div>
-
-        {/* Button skeleton */}
-        <div className="w-full h-10 bg-gray-200 rounded animate-pulse" />
       </div>
     </CommonCard>
   );
