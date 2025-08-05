@@ -8,7 +8,7 @@ type GameCartButtonProps = {
   game: Game;
 };
 
-export default async function GameCartButton({ game }: GameCartButtonProps) {
+export default function GameCartButton({ game }: GameCartButtonProps) {
   const { addGame, removeGame, isInCart } = useCartStore();
 
   const gameIsInCart = isInCart(game.id);
