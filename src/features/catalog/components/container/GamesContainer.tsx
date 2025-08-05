@@ -1,7 +1,7 @@
 import { ENDPOINTS, ITEMS_PER_PAGE } from "@/config/endpoints";
 import GameList from "./GameList";
 import { apiService } from "@/services/apiService";
-import { GamesResponse } from "../../types/gameResponse";
+import { GamesResponse } from "../../../../types/gameResponse";
 import GenreSelect from "../ui/selects/GenreSelect";
 import Pagination from "@/components/ui/pagination/Pagination";
 import EmptyGames from "../ui/cards/EmptyGames";

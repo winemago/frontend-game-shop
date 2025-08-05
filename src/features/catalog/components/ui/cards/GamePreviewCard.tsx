@@ -1,7 +1,7 @@
-import Button from "@/components/ui/buttons/Button";
 import CommonCard from "@/components/ui/cards/CommonCard";
 import { Game } from "@/types/game";
 import Image from "next/image";
+import GameCartButton from "../buttons/GameCartButton";
 
 type GamePreviewCardProps = {
   game: Game;
@@ -25,9 +25,7 @@ export default function GamePreviewCard({ game }: GamePreviewCardProps) {
             <h3 className="text-sm">${game.price}</h3>
           </div>
         </div>
-        <Button variant="secondary" className="flex-shrink-0">
-          ADD TO CART
-        </Button>
+        <GameCartButton game={game} />
       </div>
     </CommonCard>
   );

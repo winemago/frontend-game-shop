@@ -17,7 +17,6 @@ const config: Config = {
         "fill-secondary": "var(--fill-secondary)",
         "fill-tertiary": "var(--fill-tertiary)",
         "text-primary": "var(--text-primary)",
-        "text-secondary": "var(--text-secondary)",
         "text-on-fill": "var(--text-on-fill)",
         stroke: "var(--stroke)",
         "stroke-secondary": "var(--stroke-secondary)",
