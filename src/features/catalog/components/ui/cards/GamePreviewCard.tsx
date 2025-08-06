@@ -34,7 +34,7 @@ export default function GamePreviewCard({ game }: GamePreviewCardProps) {
         </div>
         <div className="flex flex-col flex-1 justify-between">
           <div className="space-y-2 sm:space-y-3">
-            <div className="text-xs text-gray-500 uppercase tracking-wide font-medium">
+            <div className="text-xs text-text-secondary uppercase tracking-wide font-medium">
               {game.genre}
             </div>
             <div className="flex items-start sm:items-center justify-between gap-2">
