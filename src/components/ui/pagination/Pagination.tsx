@@ -64,7 +64,7 @@ export default function Pagination({
   const visiblePages = getVisiblePages();
 
   return (
-    <div className="flex items-center justify-center gap-2 py-8">
+    <div className="flex items-center justify-center gap-2 pb-8">
       <Button
         variant="outline"
         size="sm"

@@ -43,13 +43,15 @@ export default async function GameContainer({ searchParams }: Props) {
 
   return (
     <>
-      <div className="mb-32 px-global py-8 border-b border-stroke">
+      <div className=" px-global py-8 border-b border-stroke">
         <GenreSelect options={genreOptions} />
       </div>
       {games.length > 0 ? (
         <>
           <GameList games={games} />{" "}
-          <Pagination totalPages={totalPages} currentPage={currentPage} />
+          {!searchParams?.genre && (
+            <Pagination totalPages={totalPages} currentPage={currentPage} />
+          )}{" "}
         </>
       ) : (
         <EmptyCaseCard message="No games found. Try adjusting your filters or search criteria." />

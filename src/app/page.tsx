@@ -10,7 +10,7 @@ export default async function Home({
   return (
     <main className="flex flex-col">
       <div className="px-4 sm:px-6 lg:px-global py-6 sm:py-8">
-        <h1 className="font-bold text-2xl sm:text-3xl lg:text-4xl xl:text-5xl text-center sm:text-left">
+        <h1 className="font-bold text-3xl lg:text-4xl xl:text-5xl text-center sm:text-left">
           Top Sellers
         </h1>
       </div>
